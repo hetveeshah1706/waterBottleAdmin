@@ -1,10 +1,11 @@
 import { Component, OnInit,ViewChild} from '@angular/core';
-import { MatTableDataSource} from "@angular/material";
+import { MatTableDataSource, MatDialog} from "@angular/material";
 import { order_delivery_class  } from "./order_d_class";
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { OrderDeliveryServiceService } from './order-delivery-service.service';
 import { Router } from '@angular/router';
+import { ViewMoreOrderDeliveryAssignedComponent } from '../view-more-order-delivery-assigned/view-more-order-delivery-assigned.component';
 
 @Component({
   selector: 'app-order-delivery',
@@ -12,22 +13,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./order-delivery.component.css']
 })
 export class OrderDeliveryComponent implements OnInit {
-  displayedColumns: string[] = ['order_id','emp_name','delivery_date','comment','action'];
+  displayedColumns: string[] = ['order_id','emp_name','delivery_date','comment','pro_name','action'];
   dataSource =new MatTableDataSource();
   order_del_arr:order_delivery_class[];
   order_delivery_id:number;
+  orderDeliveryAssigned:[]=[];
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(public _ser:OrderDeliveryServiceService,public _route:Router ) { }
+  constructor(public _ser:OrderDeliveryServiceService,public _route:Router,public _dialog:MatDialog) { }
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
-    this._ser.getAllOrderdel().subscribe(
-      (data:order_delivery_class[])=>
-      {
-        this.order_del_arr=data;
-        this.dataSource.data=this.order_del_arr;
+    // this._ser.getAllOrder().subscribe(
+    //   (data:order_delivery_class[])=>
+    //   {
+    //     this.order_del_arr=data;
+    //     this.dataSource.data=this.order_del_arr;
+    //   }
+    // );
+    this._ser.getAllOrderAssigned().subscribe(
+      (data:[])=>{
+        console.log(data)
+        this.orderDeliveryAssigned=data
+        this.dataSource.data=this.orderDeliveryAssigned
       }
     );
   }
@@ -42,13 +51,17 @@ export class OrderDeliveryComponent implements OnInit {
     );
     }
   }
+  onViewMore(row)
+  {
+    this._dialog.open(ViewMoreOrderDeliveryAssignedComponent,{data:row});
+  }
   onUpdate(element)
   {
 
   }
   onAdd()
   {
-
+    this._route.navigate(['/nav/addOrderDeliveryAssigned'])
   }
     applyFilter(filterValue: string) {
       this.dataSource.filter = filterValue.trim().toLowerCase();

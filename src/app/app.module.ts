@@ -5,7 +5,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
-import { MatTableModule, MatInputModule ,MatIconModule, MatFormFieldModule, MatFormFieldControl, MatSelectModule, MatNativeDateModule, MatDialogModule, MatPaginator, MatPaginatorModule} from "@angular/material";
+import { MatTableModule, MatInputModule ,MatIconModule, MatFormFieldModule, MatFormFieldControl, MatSelectModule, MatNativeDateModule, MatDialogModule, MatPaginator, MatPaginatorModule, MatGridListModule, MatRadioModule} from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { routingArr } from './app.routing';
@@ -41,6 +41,8 @@ import { AddorderComponent } from './order/addorder/addorder.component';
 import { OrderDeliveryComponent } from './order-delivery/order-delivery.component';
 import { UpdateorderComponent } from './order/updateorder/updateorder.component';
 import { ViewmoreorderComponent } from './viewmoreorder/viewmoreorder.component';
+import { ViewMoreOrderDeliveryAssignedComponent } from './view-more-order-delivery-assigned/view-more-order-delivery-assigned.component';
+import { AddOrderDeliveryAssignedComponent } from './add-order-delivery-assigned/add-order-delivery-assigned.component';
 
 
 @NgModule({
@@ -73,7 +75,9 @@ import { ViewmoreorderComponent } from './viewmoreorder/viewmoreorder.component'
     ViewmoreuserComponent,
     AddorderComponent,
     OrderDeliveryComponent,
-    ViewmoreorderComponent
+    ViewmoreorderComponent,
+    ViewMoreOrderDeliveryAssignedComponent,
+    AddOrderDeliveryAssignedComponent
   ],
   imports: [
     BrowserModule,
@@ -96,11 +100,14 @@ import { ViewmoreorderComponent } from './viewmoreorder/viewmoreorder.component'
     MatListModule,
     MatNativeDateModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatGridListModule,
+    MatRadioModule
   ],
    entryComponents:[
      ViewmoreuserComponent,
-    ViewmoreorderComponent
+    ViewmoreorderComponent,
+    ViewMoreOrderDeliveryAssignedComponent
 
   ],
   providers: [],

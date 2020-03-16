@@ -25,6 +25,7 @@ import { GenerateBillComponent } from './generate-bill/generate-bill.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserauthguardService } from './userauthguard.service';
+import { AddOrderDeliveryAssignedComponent } from './add-order-delivery-assigned/add-order-delivery-assigned.component';
 
 
 
@@ -55,8 +56,9 @@ const arr: Routes = [
       {path:'addorder',component:AddorderComponent},
       {path:'updateorder/:order_id',component:UpdateorderComponent},
       {path:'orderdelivery',component:OrderDeliveryComponent},
+      {path:'addOrderDeliveryAssigned',component:AddOrderDeliveryAssignedComponent},
       { path: 'bill', component: BillComponent },
-      {path:'generateBill/:fk_customer_id',component:GenerateBillComponent},
+      {path:'generateBill/:order_id',component:GenerateBillComponent},
       { path: '**', component: PagenotfoundComponent }
     ]
   },

@@ -33,7 +33,7 @@ export class BillComponent implements OnInit {
   }
 
 onViewBill(item){
-  this._route.navigate(['/nav/generateBill',item.fk_customer_id])
+  this._route.navigate(['/nav/generateBill',item.order_id])
 }
   applyFilter1(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

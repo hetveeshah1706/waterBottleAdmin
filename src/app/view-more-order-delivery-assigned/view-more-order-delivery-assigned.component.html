@@ -1,0 +1,24 @@
+<div class="container">
+
+    <mat-list>
+      <mat-list-item><i class="material-icons">perm_identity</i>ORDER DELIVERY ID:{{order_delivery_id}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>DELIVERY DATE:{{delivery_date | date}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>COMMENT:{{comment}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>QUANTITY:{{qty}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>ORDER-DATE:{{order_date}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>EMPLOYEE'S MOBILE NUMBER:{{mobile_no}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>PRODUCT PRICE:{{pro_price}}</mat-list-item>
+      <mat-divider></mat-divider>
+
+
+    </mat-list>
+    <div>
+      <button mat-button (click)="onCloseClick()">Back/Close</button>
+    </div>
+  </div>
