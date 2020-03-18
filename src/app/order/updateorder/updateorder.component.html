@@ -1,4 +1,4 @@
-<form class="container" (ngSubmit)="onupdateorder(f)" #f="ngForm">
+<form class="container" (ngSubmit)="onupdateorder()" #f="ngForm">
   <mat-form-field>
     <mat-select name="fk_pro_id" [(ngModel)]="selectedProduct">
    <mat-option *ngFor="let item of pro_arr" [value]="item.pro_id">

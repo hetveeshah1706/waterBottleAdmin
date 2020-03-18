@@ -43,7 +43,7 @@ export class UpdateCustomerComponent implements OnInit {
 
 
   }
-  onupdatecustomer(item:customer_class)
+  onupdatecustomer()
   {
     this._ser.updatecustomer(new customer_class(this.customer_id,this.customer_name,this.customer_address,this.customer_mobileno,this.selected)).subscribe(
       (data:customer_class)=>{

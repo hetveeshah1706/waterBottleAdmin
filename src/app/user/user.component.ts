@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild} from '@angular/core';
-import { MatTableDataSource, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 import { UserServiceService } from './user-service.service';
 import { user_class } from './user_class';
 import { Router } from "@angular/router";

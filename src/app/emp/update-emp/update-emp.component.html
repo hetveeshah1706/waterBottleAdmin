@@ -9,7 +9,7 @@
   <br>
   <mat-form-field>
     <mat-label>ENTER A USER EMAIL</mat-label>
-    <mat-select name="fk_user_email" [(ngModel)]="selected">
+    <mat-select formControlName="fk_user_email" [(ngModel)]="selected">
       <mat-option *ngFor="let item of user_arr" [value]="item.user_email">
         {{item.user_email}}
       </mat-option>

@@ -64,6 +64,7 @@ export class UpdateorderComponent implements OnInit {
   {
     this._ser.updateorder(new order_class(this.selectedProduct,this.qty,this.order_date,this.selectedCustomer,this.order_status,this.order_id)).subscribe(
       (data:order_class[])=>{
+        console.log(data)
         this._route.navigate(['/nav/order']);
       }
     );

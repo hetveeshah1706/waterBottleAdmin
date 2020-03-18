@@ -27,7 +27,7 @@ export class UpdateUserComponent implements OnInit {
 
 
   }
-  onUpdateUser(item:user_class)
+  onUpdateUser()
   {
     this._ser.updateUser(new user_class(this.user_email,this.user_password,this.user_type)).subscribe(
       (data:user_class)=>{

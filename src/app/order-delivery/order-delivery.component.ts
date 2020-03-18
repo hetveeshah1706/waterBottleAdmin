@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild} from '@angular/core';
-import { MatTableDataSource, MatDialog} from "@angular/material";
+import { MatDialog } from "@angular/material/dialog";
+import { MatTableDataSource } from "@angular/material/table";
 import { order_delivery_class  } from "./order_d_class";
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';

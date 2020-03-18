@@ -1,4 +1,4 @@
-<form class="container" (ngSubmit)="onupdateproduct(f)" #f="ngForm">
+<form class="container" (ngSubmit)="onupdateproduct()" #f="ngForm">
   <!-- <mat-form-field>
       <input matInput placeholder="ENTER ID" [(ngModel)]="pro_id" name="pro_id">
     </mat-form-field>
@@ -26,6 +26,6 @@
         <input matInput placeholder="ENTER PRODUCT PRICE" [(ngModel)]="pro_price" name="pro_price" #proprice='ngModel' required>
         <label class="alert alert-danger" *ngIf="proprice.hasError('required') && !proprice.pristine">Price is required</label>
       </mat-form-field>
-
+      <button mat-button type="submit">update</button>
     </form>
 

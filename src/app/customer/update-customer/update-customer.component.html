@@ -1,4 +1,4 @@
-<form class="container" (ngSubmit)="onupdatecustomer(f)" #f="ngForm">
+<form class="container" (ngSubmit)="onupdatecustomer()" #f="ngForm">
   <mat-form-field>
       <input matInput placeholder="ENTER NAME" [(ngModel)]="customer_name" name="customer_name" #custname="ngModel" required>
       <label class="alert alert-danger" *ngIf="custname.hasError('required') && !custname.pristine">Name is required</label>
