@@ -30,6 +30,7 @@ export class UpdateEmpComponent implements OnInit {
     });
     this._ser.getempbyid(this.emp_id.toString()).subscribe(
       (data: emp_class[]) => {
+        console.log(data)
         this.formDataBind(data[0]);
       }
     );
@@ -42,6 +43,7 @@ export class UpdateEmpComponent implements OnInit {
 }
 
   formDataBind(item: emp_class) {
+    console.log(item)
     this.emp_update.patchValue({
       emp_name:item.emp_name,
       mobile_no:item.mobile_no,
